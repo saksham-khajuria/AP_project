@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tab Menu</title>
+        <link rel="stylesheet" href="style.css">
+		<script src="jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			$('#login').show();
+			$('.menu-list li:first-child a').addClass('active');
+			$(".menu-list li a").click(function(e){
+				
+				var tabDivId = this.hash;                              
+
+				$(".menu-list li a").removeClass('active');
+				$(this).addClass('active');
+				$('.switchgroup').hide();
+				$(tabDivId).fadeIn();
+				e.preventDefault();
+				});
+			  }); 
+			
+		</script>
+    </head>
+    <body>
+        <div class="main-container">
+			<div class="header">
+				<span><span>
+			</div>
+            <div class="menuContainer">
+                <ul class="menu-list">
+                    <li><a href="#login">Sign In</a></li>
+                    <li><a href="#sign">Sign Up</a></li>
+                </ul>
+            </div>
+            <div class="content">
+				<div id="login" class="switchgroup">
+					<form action="#" method="post">
+						<div class="userInput"><h3>Email</h3></div>
+						<div><input type="text" name="uname"></div>
+						<div class="userInput"><h3>Password</h3></div>
+						<div><input type="password" name="password"></div>
+						<div><input type="checkbox" name="remember_me"><span>Remember me</span></div>
+						<div><input type="submit" name="login" value="Sign In"></div>
+					</form>
+				</div>
+				<div id="sign" class="switchgroup">
+					<form action="#" method="post">
+						<div class="userInput"><h3>First Name</h3></div>
+						<div><input type="text" name="fname"></div>
+						<div class="userInput"><h3>Last Name</h3></div>
+						<div><input type="text" name="lname"></div>
+						<div class="userInput"><h3>Mobile No.</h3></div>
+						<div><input type="text" name="mobile"></div>
+						<div class="userInput"><h3>Email</h3></div>
+						<div><input type="text" name="uname"></div>
+						<div class="userInput"><h3>Set Password</h3></div>
+						<div><input type="password" name="password"></div>
+						<div class="userInput"><h3>Retype Password</h3></div>
+						<div><input type="password" name="retype_pwd"></div>
+						<div class="userInput"><h3>Gender</h3></div>
+						<div><input type="radio" name="gender" value="male"><span> Male</span> <input type="radio" name="gender" value="female"><span> Female</span></div>
+						<div><input type="checkbox" name="remember_me" for="terms"><span id="terms">Read term and all conditions.</span></div>
+						<div><input type="submit" name="login" value="Sign Up"></div>
+					</form>
+				</div>
+            </div>
+        </div>
+		
+    </body>
+</html>
